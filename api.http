@@ -1,0 +1,94 @@
+@baseUrl = http://localhost:3000/api
+@contentType = application/json
+
+### Get all schedules
+GET {{baseUrl}}/schedules
+Accept: {{contentType}}
+
+### Get schedule by ID
+GET {{baseUrl}}/schedules/1
+Accept: {{contentType}}
+
+### Create new schedule - Every minute
+POST {{baseUrl}}/schedules
+Content-Type: {{contentType}}
+
+{
+    "name": "Every Minute Task",
+    "cronTime": "* * * * *",
+    "isActive": true,
+    "task": "minuteTask"
+}
+
+### Create new schedule - Every 5 minutes
+POST {{baseUrl}}/schedules
+Content-Type: {{contentType}}
+
+{
+    "name": "Every 5 Minutes Task",
+    "cronTime": "*/5 * * * *",
+    "isActive": true,
+    "task": "fiveMinuteTask"
+}
+
+### Create new schedule - Hourly
+POST {{baseUrl}}/schedules
+Content-Type: {{contentType}}
+
+{
+    "name": "Hourly Task",
+    "cronTime": "0 * * * *",
+    "isActive": true,
+    "task": "hourlyTask"
+}
+
+### Update schedule
+PUT {{baseUrl}}/schedules/1
+Content-Type: {{contentType}}
+
+{
+    "name": "Updated Task",
+    "cronTime": "*/10 * * * *",
+    "isActive": true,
+    "task": "updatedTask"
+}
+
+### Delete schedule
+DELETE {{baseUrl}}/schedules/1
+Accept: {{contentType}}
+
+### Test invalid cron expression
+POST {{baseUrl}}/schedules
+Content-Type: {{contentType}}
+
+{
+    "name": "Invalid Cron Task",
+    "cronTime": "invalid-cron",
+    "isActive": true,
+    "task": "invalidTask"
+}
+
+### Test missing required fields
+POST {{baseUrl}}/schedules
+Content-Type: {{contentType}}
+
+{
+    "name": "Missing Fields Task",
+    "isActive": true
+}
+
+### Test deactivate schedule
+PUT {{baseUrl}}/schedules/1
+Content-Type: {{contentType}}
+
+{
+    "isActive": false
+}
+
+### Test activate schedule
+PUT {{baseUrl}}/schedules/1
+Content-Type: {{contentType}}
+
+{
+    "isActive": true
+} 
