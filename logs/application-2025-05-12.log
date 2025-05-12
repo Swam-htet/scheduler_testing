@@ -1,7 +1,0 @@
-2025-05-12 18:46:43 [info] : Database connection established
-2025-05-12 18:46:43 [error] : Failed to start server{"error":"Table 'mydatabase.scheduler' doesn't exist","stack":"Error: Table 'mydatabase.scheduler' doesn't exist\n    at PromisePool.execute (/usr/src/app/node_modules/mysql2/lib/promise/pool.js:54:22)\n    at Scheduler.create (/usr/src/app/src/models/scheduler.js:8:33)\n    at SchedulerService.initializeSchedules (/usr/src/app/src/services/schedulerService.js:39:23)\n    at startServer (/usr/src/app/src/index.js:29:28)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"}
-2025-05-12 18:47:33 [info] : Database connection established
-2025-05-12 18:47:33 [info] : Scheduler initialized successfully
-2025-05-12 18:47:33 [info] : Server is running on port 3000
-2025-05-12 18:48:23 [info] : Incoming Request{"method":"GET","url":"/api/schedules","ip":"::ffff:192.168.65.1","body":{},"query":{},"params":{}}
-2025-05-12 18:48:23 [info] : Request Completed{"method":"GET","url":"/api/schedules","status":200,"duration":"18ms"}
